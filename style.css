@@ -1,0 +1,162 @@
+*, ::before, ::after {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: 'Montserrat', sans-serif;
+}
+
+img {
+    width: 100%;
+    height: 100%;
+}
+
+h1, h2, h3 {
+    margin: 0;
+}
+
+.header {
+    width: 100%;
+    padding: 15px 0;
+    text-align: center;
+    font-size: 24px;
+    font-weight: 300;
+    color: black;
+}
+
+.header_logo {
+    color: inherit;
+    text-decoration: none;
+}
+
+.hero {
+    min-height: 40vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container {
+    max-width: 1230px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+.hero_container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
+    grid-gap: 20px;
+}
+
+.hero_about {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.hero_title {
+    margin-bottom: 20px;
+    font-size: 48px;
+    line-height: 1.1;
+}
+
+.hero_subtitle {
+    font-size: 32px;
+    font-weight: 400;
+}
+
+.hero_links {
+    display: flex;
+}
+
+.hero_link {
+    margin-right: 10px;
+    font-size: 30px;
+    color: black;
+    transition: color 0.3s;
+}
+
+.hero_link:hover {
+    color: #4facfe;
+}
+
+.hero_box {
+    max-width: 500px;
+    justify-self: center;
+    overflow: hidden;
+    border: 10px solid #fff;
+    box-shadow: 2px 5px 10px rgba(0, 0, 0, 0.5);
+    background-image: linear-gradient(to right, #4facfe 0%, #00f2fe 100%);
+
+    animation: ava-animate 5s infinite alternate;
+}
+
+.hero_box_image {
+    animation: ava-bg 3s infinite alternate;
+}
+
+@keyframes ava-animate {
+    0% {
+        border-radius: 30% 70% 84% 16% / 48% 30% 70% 52% ;
+    }
+
+    40% {
+        border-radius: 12% 88% 84% 16% / 48% 100% 0% 52% ;
+    }
+
+    60% {
+        border-radius: 50% 50% 13% 87% / 6% 100% 0% 94% ;
+    }
+
+    100% {
+        border-radius: 87% 13% 64% 36% / 60% 71% 29% 40% ;
+    }
+}
+
+@keyframes ava-bg {
+    from {
+        backdrop-filter: hue-rotate(0);
+    }
+
+    to {
+        backdrop-filter: hue-rotate(90deg);
+    }
+}
+
+@media screen and (max-width: 978px){
+    .hero {
+        padding-top: 30px;
+    }
+
+    .hero_container {
+        grid-row-gap: 20px;
+    }
+
+    .hero_title {
+        font-size: 28px;
+        margin-bottom: 10px;
+    }
+
+    .hero_subtitle {
+        font-size: 22px;
+        font-weight: 400;
+    }
+
+    .hero_description {
+        font-size: 14px;
+    }
+
+    .hero_about {
+        text-align: center;
+    }
+
+    .hero_links {
+        justify-content: center;
+    }
+
+    .hero_box {
+        max-width: 350px;
+    }
+}
